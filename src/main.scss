@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Epilogue:wght@500;700&family=Josefin+Sans:wght@300;400;600&family=Montserrat&family=Outfit:wght@400;700&family=Overpass:wght@400;700&family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'spartan' , sans-serif;
+}
+
+:root{
+    --primaryColor: hsl(225,50%,48%);
+    --secondaryColor:hsl(180,17%,95%);
+    --hoverColor:hsl(225,56%,59%);
+    --greyText:rgb(145,145,145);
+    --blackColor:hsl(0,0%,12%);
+    --boxShadow: box-shadow: rgba(0,0,0,0.1) 0px 10px 15px -3px , rgba(0,0,0,0.05)
+    0px 4px 6px -2px;
+    --transition: .4s ease-in-out;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    cursor: pointer;
+}
+
+.section{
+    padding: 4rem 0 2rem;
+}
+
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.icon{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    align-items: center;
+}
+
+.none{
+    display: none;
+}
+
+.btn{
+    padding: .7rem 1.5rem;
+    background-color: var(--primaryColor);
+    border: none;
+    outline: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    color: white;
+
+    a{
+        color: var(--whiteColor);
+        font-weight: 500;
+    }
+
+    &:hover{
+        background: var(--hoverColor);
+    }
+}
+
+img, video{
+    width: 100%;
+    height: auto;
+}
+
+input{
+    font-size: 100%;
+    color: var(--greyText);
+}
+
+p{
+    font-size: 13px;
+    color: var(--greyText);
+    line-height: 22px;
+}
+
+h4{
+    padding: 1rem 0;
+    font-weight: 700;
+    color: var(--blackColor);
+}
+
+h2{
+    font-size: 25px;
+    padding: 1rem 0;
+    color: var(--blackColor);
+}
+
+
+// navbar styles ========================================= navbar styles //
+
+.navbar{
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    z-index: 100;
+
+    .navbar-one, .navbar-two{
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .navbar-one{
+        background-color: var(--secondaryColor);
+
+        .icon:hover{
+            color: var(--primaryColor);
+        }
+
+        .middle{
+            gap: 1rem;
+
+            li:hover{
+                color: var(--primaryColor);
+                font-weight: 700;
+            }
+        }
+
+        .atb{
+            gap: 1rem;
+            
+            span{
+                color: var(--blackColor);
+                font-size: 13px;
+                cursor: pointer;
+
+                &:hover{
+                    color: var(--primaryColor);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        @media screen and (max-width:768px){
+            .middle{
+                display: none;
+            }
+        }
+    }
+
+    .navbar-two{
+        top: 3rem;
+        padding: 1.5rem 1rem;
+        position: fixed;
+        transition: .3s ease-in-out;
+
+        .logo-div{
+            .logo{
+                width: 30px;
+                height: 25px;
+                border-radius: 5px;
+            }
+        }
+
+        .navbar-menu{
+            gap: 1rem;
+            display: flex;
+
+            ul{
+                gap: 1rem;
+
+                li:hover{
+                    color: var(--primaryColor);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        @media screen and (max-width:768px){
+            .navbar-menu{
+                position: absolute;
+                flex-direction: column;
+                background-color: var(--secondaryColor);
+                padding: 1.5rem;
+                border-radius: 10px;
+                top: 5rem;
+                right: -50%;
+                width: 80%;
+                transform: translateX(50%);
+                z-index: 2000;
+                border: 3px solid white;
+                box-shadow: rgba(0,0,0,0.1) 0px 10px 15px -3px;
+                transition: .4s ease-in-out;
+            }
+
+            .menu{
+                flex-direction: column;
+                gap: .5rem;
+                text-align: center;
+
+                .list-item{
+                    padding: .5rem 0;
+                    color: var(--blackColor);
+                    cursor: pointer;
+
+                    &:hover{
+                        color: var(--primaryColor);
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .icon{
+                display: block;
+            }
+
+            .btnOne{
+                display: block;
+                justify-content: center;
+                margin: auto;
+                margin-top: 1rem;
+            }
+        }
+        .btnTwo{
+            display: none;
+        }
+    }
+    .toggleIcon{
+        .icon{
+            font-size: 30px;
+            color: var(--blackColor);
+        }
+    }
+    .showNavbar{
+        right: 50% !important;
+        transition: .5s ease-in-out;
+    }
+}
+
+
+// Home styles ========================================= Home styles //
+
+.home{
+    padding-top: 10rem;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+
+    .maintext{
+        color: var(--blackColor);
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 2.5rem;
+    }
+
+    .homeImages{
+        width: 100%;
+        margin: 1rem auto 0;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 5rem;  
+        
+        .vediodiv{
+           /*  width: 100%; */
+           
+            .video{
+                border-radius: 10rem !important;
+                height: 20rem;
+            }
+        }
+
+        .plane{
+            position: absolute;
+            width: 20rem;
+            top: -10%;
+            background-color: transparent;
+        }
+    }
+}
+
+
+// Search styles ========================================= Search styles //
